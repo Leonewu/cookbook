@@ -49,7 +49,10 @@ interface Index {
     dispatch(minus())
   },
   asyncAdd () {
-    dispatch(asyncAdd())
+    // dispatch(asyncAdd())
+    Taro.navigateTo({
+      url: '/pages/list/list'
+    })
   }
 }))
 class Index extends Component {
@@ -61,7 +64,7 @@ class Index extends Component {
    * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
-    config: Config = {
+  config: Config = {
     navigationBarTitleText: '首页'
   }
 
@@ -82,7 +85,7 @@ class Index extends Component {
         <Button className='dec_btn' onClick={this.props.dec}>-</Button>
         <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
         <View><Text>{this.props.counter.num}</Text></View>
-        <View><Text>Hello, World</Text></View>
+        <View><Text>Hello, World fxxk</Text></View>
       </View>
     )
   }
